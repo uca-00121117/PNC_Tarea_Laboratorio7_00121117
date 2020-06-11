@@ -7,7 +7,7 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(schema="public", name="estudiante")
 public class Estudiante {
-	// Id
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="c_usuario")
@@ -34,22 +34,59 @@ public class Estudiante {
 	private String carrera;
 
 
-	public Estudiante() {}
-	//	Codigo
-	public Integer getCodigo() {return codigo;}
-	public void setCodigo(Integer codigo) {	this.codigo = codigo;}
-	// Nombre
-	public String getNombre() {	return nombre;}
-	public void setNombre(String nombre) {this.nombre = nombre;}
-	//	Apellido
-	public String getApellido() {return apellido;}
-	public void setApellido(String apellido) {this.apellido = apellido;}
-	//	Carne
-	public String getCarne() {return carne;}
-	public void setCarne(String carne) {this.carne = carne;	}
-	//	Carrera
-	public String getCarrera() {return carrera;	}
-	public void setCarrera(String carrera) {this.carrera = carrera;}
+	public Estudiante() {
+		
+	}
+
+
+	public Integer getCodigo() {
+		return codigo;
+	}
+
+
+	public void setCodigo(Integer codigo) {
+		this.codigo = codigo;
+	}
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+	public String getApellido() {
+		return apellido;
+	}
+
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+
+	public String getCarne() {
+		return carne;
+	}
+
+
+	public void setCarne(String carne) {
+		this.carne = carne;
+	}
+
+
+	public String getCarrera() {
+		return carrera;
+	}
+
+
+	public void setCarrera(String carrera) {
+		this.carrera = carrera;
+	}
 	
 	
 }

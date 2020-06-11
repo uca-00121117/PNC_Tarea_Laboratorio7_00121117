@@ -14,13 +14,11 @@ public class EstudianteDAOImpl implements EstudianteDAO {
 	
 	@PersistenceContext(unitName="capas")
 	private EntityManager entityManager;
-	
-	//	Metodo Obtener datos
+
 	@Override
 	public List<Estudiante> findAll() throws DataAccessException {
 		
 		StringBuffer sb = new StringBuffer();
-		// Aqui traemos todos los datos 
 		sb.append("SELECT * FROM public.estudiante");
 		Query query = entityManager.createNativeQuery(sb.toString(), Estudiante.class);
 		List<Estudiante> resultset = query.getResultList();
@@ -29,14 +27,28 @@ public class EstudianteDAOImpl implements EstudianteDAO {
 		
 	}
 
-	//	Metodo para insertar Datos ;
-	//Transactional garantiza a atomicidad de la consulta
+
 	@Override
 	@Transactional
 	public void insert(Estudiante estudiante) throws DataAccessException {
-		// objeto persiste en la base
+		
 		entityManager.persist(estudiante);		
 		
+	}
+
+	@Override
+	@Transactional
+	public void delete(Integer codigo) throws DataAccessException {
+		
+		Estudiante estudiante = entityManager.find(Estudiante.class, codigo);
+		entityManager.remove(estudiante);
+		
+	}
+
+
+	@Override
+	public Estudiante findOne(Integer id) throws DataAccessException {
+		return entityManager.find(Estudiante.class, id);
 	}
 
 }

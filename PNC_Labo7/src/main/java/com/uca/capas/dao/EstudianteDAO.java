@@ -6,12 +6,12 @@ import com.uca.capas.domain.Estudiante;
 
 public interface EstudianteDAO {
 	
-	//Interfaz que obtiene datos
-	
 	public List<Estudiante> findAll() throws DataAccessException;
 	
-	//Interfaz que inserta datos
+	public Estudiante findOne(Integer id) throws DataAccessException;
 	
 	public void insert(Estudiante estudiante) throws DataAccessException;
+	
+	public void delete(Integer codigo) throws DataAccessException;
 
 }
