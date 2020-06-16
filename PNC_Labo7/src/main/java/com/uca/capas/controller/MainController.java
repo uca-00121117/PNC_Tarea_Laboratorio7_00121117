@@ -41,10 +41,10 @@ public class MainController {
 	public ModelAndView MostrarDTO() 
 	{
 		ModelAndView mav = new ModelAndView();
-		List<EstudianteDTO> estudiantes = null;
+		List<Estudiante> estudiantes = null;
 		try 
 		{
-			estudiantes = estudianteService.dtoPrueba()	;
+			estudiantes = estudianteService.findAll();
 		}
 		catch (Exception e) 
 		{
@@ -80,8 +80,8 @@ public class MainController {
 			}
 			estudiante = new Estudiante();
 			mav.addObject("estudiante", estudiante);	
+			mav.addObject("message", "Estudiante Guardado!");
 		}
-		mav.addObject("message", "Estudiante Guardado!");
 		mav.setViewName("index");
 		return mav;
 	}
@@ -99,6 +99,7 @@ public class MainController {
 			}catch (Exception e) {
 				e.printStackTrace();
 			}
+			mav.addObject("message", "Estudiante Modificado!");
 			mav.addObject("estudiantes", estudiantes);
 			mav.setViewName("listado");
 		}
@@ -126,8 +127,6 @@ public class MainController {
 		}
 		
 		mav.addObject("estudiantes", estudiantes);
-
-		
 		mav.setViewName("listado");
 		
 		return mav;

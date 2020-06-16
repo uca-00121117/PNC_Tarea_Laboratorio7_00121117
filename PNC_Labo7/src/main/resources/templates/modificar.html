@@ -15,19 +15,19 @@
 			<input type="hidden" th:field="${estudiante.codigo}" th:value="${estudiante.codigo}">
 			<label>Nombre :</label><br>
 			<input type="text" th:field="${estudiante.nombre}" th:value="${estudiante.nombre}"><br>
-			<span th:errors="${estudiante.nombre}" style="color:  #E81505;"></span><br>
+			<span th:errors="${estudiante.nombre}" style="color:  #red;"></span><br>
 			
 			<label>Apellido:</label><br>
 			<input type="text" th:field="${estudiante.apellido}" th:value="${estudiante.apellido}"><br>
-			<span th:errors="${estudiante.apellido}" style="color:  #E81505;"></span><br>
+			<span th:errors="${estudiante.apellido}" style="color:  #red;"></span><br>
 			
 			<label>Carne:</label><br>
 			<input type="number" th:field="${estudiante.carne}" th:value="${estudiante.carne}"><br>
-			<span th:errors="${estudiante.carne}" style="color:  #E81505;"></span><br>
+			<span th:errors="${estudiante.carne}" style="color:  #red;"></span><br>
 			
 			<label>Carrera:</label><br>
 			<input type="text" th:field="${estudiante.carrera}" th:value="${estudiante.carrera}"><br>
-			<span th:errors="${estudiante.carrera}" style="color:  #E81505;"></span><br><br>
+			<span th:errors="${estudiante.carrera}" style="color:  #red;"></span><br><br>
 		</div>
 		<input type="submit" value="Modificar estudiante">
 	</form><br>
